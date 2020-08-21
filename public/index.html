@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <script src="jquery3.js"></script>
+	 <link rel="stylesheet" type="text/css" href="css/style.css">
+	 <title>Copy Paste</title>
+</head>
+<body>
+	<div class="container">
+		<div class="headerpart">	
+			<nav>
+				<h1>Copy & Paste</h1>
+
+			</nav>
+		</div>	
+		<div class="datapart">
+			<form action="/user_copy" method="POST">
+				<div class="lex">
+					<textarea name="user_text_data" id="copyf" cols="100" rows="10" autofocus required placeholder="Enter Your Text Here" minlength="1" maxlength="60000"></textarea>
+				</div>
+				<div class="buttonsave">
+					<input type="submit" value="Save" id="btn1">
+				</div>
+			</form>	
+		</div>
+	</div>			
+	<script type="text/javascript" src="process.js"></script>
+
+	</script>
+	<script src="/socket.io/socket.io.js">
+
+	</script>
+	<script>
+		var socket=io();
+		socket.on('connect',function(){
+			console.log("Connected to Server ");
+			console.log(socket);
+			
+		});
+		socket.on('disconnect',function(){
+			console.log("Disconnected to Server ");
+			
+		});
+	</script>
+</body>
+
+</html>
